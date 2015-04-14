@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EZAudioDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-c6-7Qe">
+                                <rect key="frame" x="276" y="549" width="51" height="31"/>
+                                <connections>
+                                    <action selector="microphoneSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="cFb-zr-sYh"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-R9-QvD">
+                                <rect key="frame" x="16" y="468" width="568" height="73"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHD-N2-Wis" customClass="EZAudioPlotGL">
+                                <rect key="frame" x="0.0" y="28" width="600" height="432"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I1u-R9-QvD" firstAttribute="top" secondItem="oHD-N2-Wis" secondAttribute="bottom" constant="8" symbolic="YES" id="3vS-oO-EM6"/>
+                            <constraint firstItem="I1u-R9-QvD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6ab-VN-f4L"/>
+                            <constraint firstItem="I1u-R9-QvD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="448" id="6qi-ik-Rk2"/>
+                            <constraint firstItem="I1u-R9-QvD" firstAttribute="centerX" secondItem="Sgm-c6-7Qe" secondAttribute="centerX" id="Iug-sq-rpf"/>
+                            <constraint firstItem="oHD-N2-Wis" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Nnv-tO-su8"/>
+                            <constraint firstItem="oHD-N2-Wis" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sgv-jj-uVA"/>
+                            <constraint firstAttribute="bottom" secondItem="Sgm-c6-7Qe" secondAttribute="bottom" constant="20" symbolic="YES" id="bO6-7A-BHg"/>
+                            <constraint firstItem="oHD-N2-Wis" firstAttribute="centerX" secondItem="I1u-R9-QvD" secondAttribute="centerX" id="qh2-Yp-3oT"/>
+                            <constraint firstItem="Sgm-c6-7Qe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="woy-DX-lQe"/>
+                            <constraint firstItem="Sgm-c6-7Qe" firstAttribute="top" secondItem="I1u-R9-QvD" secondAttribute="bottom" constant="8" symbolic="YES" id="zgD-0a-BQD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="audioPlot" destination="oHD-N2-Wis" id="jlP-EW-nam"/>
+                        <outlet property="timerLabel" destination="I1u-R9-QvD" id="Oxd-mX-YyQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
